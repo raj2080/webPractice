@@ -3,6 +3,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
+//importing the module
+const connectDatabase = require('./database/database');
+
+//importing dotenv package
+const dotenv = require ('dotenv')
+
+
 
 
 
@@ -18,32 +25,39 @@ app.use(express.json());
 
 
 
+//dotenv configuration
+dotenv.config()
+
+
 // connecting to database
+//using the module
+connectDatabase()
 
-mongoose.connect('mongodb://localhost:27017/user_db').then(() => {
-console.log("Database connected!") 
 
-})
 
+
+
+
+
+//configuring routes of contact
+app.use('/api/newcontact',require('./routes/contactRoutes'))
+// developed api :::::::>>>>>  http://localhost:5000/api/newcontact/add
 
 
 
 
 // defining the port
-const PORT= 5000;
+const PORT = process.env.PORT;
 
 
 // starting the server
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
 
-    //message
-  console.log( `Server is running on port ${PORT}!` )
+  //message
+  console.log(`Server is running on port ${PORT}!`)
 
 })
 
 
 
-app.get('/test', (req, res)=>{
 
-    res.send("Test API is working!....")
-}) 
