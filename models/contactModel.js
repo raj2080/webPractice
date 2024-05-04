@@ -10,9 +10,9 @@ const contactSchema = new mongoose.Schema({
     },
 
     phonenumber: {
-        type : Number,
+        type : String,
         required: true,
-        max: 10,
+        
     },
 
     email:{
