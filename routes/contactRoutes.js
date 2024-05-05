@@ -19,4 +19,4 @@ const contactController = require('../controllers/contactController');
 router.post('/add',contactController.createContact)
 
 //exporting
-module.exports = router
+module.exports = router;

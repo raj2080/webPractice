@@ -44,6 +44,10 @@ app.use('/api/newcontact',require('./routes/contactRoutes'))
 // developed api :::::::>>>>>  http://localhost:5000/api/newcontact/add
 
 
+app.use('/api',require('./routes/reserveRoutes'))
+// developed api :::::::>>>>>  http://localhost:5000/api/reserve
+
+
 
 
 // defining the port
