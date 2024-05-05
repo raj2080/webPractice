@@ -53,12 +53,12 @@ const createReserve = async (req, res) => {
 
     const todaydate = new Date( );
 
-    //console.log(todaydate);
+    console.log(todaydate);
 
+ 
+   const futuredate = new Date(Eventdate);
 
-    const futuredate = new Date(Eventdate);
-
-    //console.log(futuredate);
+    console.log(futuredate);
 
 
     if (futuredate < todaydate) {
